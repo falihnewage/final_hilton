@@ -22,57 +22,45 @@ const LoginPage = () => {
   const dispatch = useDispatch()
   const navigate = useHistory()
   const { register, handleSubmit, formState: { errors }, reset } = useForm()
+
+  
   const onSubmit = async (data) => {
     // navigate.push('/admin/dashboard')
 
     setloading(true)
-
-   const response= await instance({
-      method: 'post',
-      url: `/auth/local`,
-      data: {
+    instance.defaults.withCredentials = true
+    await instance.post(`/auth/local`,
+      {
         username: data.email,
         password: data.password,
         info: {
           role_id: 1
         },
+
+
+      },
+      {
+
+
+        withCredentials: true,
+        credentials: 'include'
       }
-    });
 
-    console.log(response,'res');
-    
-    // post(`/auth/local`,
-      // {
-      //   username: data.email,
-      //   password: data.password,
-      //   info: {
-      //     role_id: 1
-      //   },
-        
+    ).then(async (res) => {
 
-      // },
-      // {
+      setloading(false)
 
-        
-      //   withCredentials:true,
-      //   credentials:'include'
-      // }
-      
-      // ).then(async (res) => {
 
-      //   setloading(false)
-        
+      message.success('Login Success')
+      reset()
+      // navigate.push('/admin/dashboard')
 
-      //   message.success('Login Success')
-      //   reset()
-      //   // navigate.push('/admin/dashboard')
+    }).catch((err) => {
 
-      // }).catch((err) => {
-
-      //   message.error(err.response.data.message || "Something went wrong")
-      // }).finally(() => {
-      //   setloading(false)
-      // })
+      message.error(err.response.data.message || "Something went wrong")
+    }).finally(() => {
+      setloading(false)
+    })
     reset()
   }
 
