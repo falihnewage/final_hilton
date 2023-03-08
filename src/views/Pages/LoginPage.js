@@ -27,16 +27,30 @@ const LoginPage = () => {
 
     setloading(true)
 
-    await instance.post(`/auth/local`,
-      {
+   const response= await instance({
+      method: 'post',
+      url: `/auth/local`,
+      data: {
         username: data.email,
         password: data.password,
         info: {
           role_id: 1
         },
+      }
+    });
+
+    console.log(response,'res');
+    
+    // post(`/auth/local`,
+      // {
+      //   username: data.email,
+      //   password: data.password,
+      //   info: {
+      //     role_id: 1
+      //   },
         
 
-      },
+      // },
       // {
 
         
@@ -44,21 +58,21 @@ const LoginPage = () => {
       //   credentials:'include'
       // }
       
-      ).then(async (res) => {
+      // ).then(async (res) => {
 
-        setloading(false)
+      //   setloading(false)
         
 
-        message.success('Login Success')
-        reset()
-        // navigate.push('/admin/dashboard')
+      //   message.success('Login Success')
+      //   reset()
+      //   // navigate.push('/admin/dashboard')
 
-      }).catch((err) => {
+      // }).catch((err) => {
 
-        message.error(err.response.data.message || "Something went wrong")
-      }).finally(() => {
-        setloading(false)
-      })
+      //   message.error(err.response.data.message || "Something went wrong")
+      // }).finally(() => {
+      //   setloading(false)
+      // })
     reset()
   }
 
