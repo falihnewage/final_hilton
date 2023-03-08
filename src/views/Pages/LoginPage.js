@@ -36,12 +36,13 @@ const LoginPage = () => {
         },
         
 
-      },{
+      },
+      // {
 
         
-        withCredentials:true,
-        credentials:'include'
-      }
+      //   withCredentials:true,
+      //   credentials:'include'
+      // }
       
       ).then(async (res) => {
 
