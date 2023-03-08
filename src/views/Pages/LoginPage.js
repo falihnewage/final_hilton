@@ -38,8 +38,9 @@ const LoginPage = () => {
 
       },{
 
-        credentials:'include',
-        withCredentials:true
+        
+        withCredentials:true,
+        credentials:'include'
       }
       
       ).then(async (res) => {
@@ -54,7 +55,7 @@ const LoginPage = () => {
       }).catch((err) => {
 
         message.error(err.response.data.message || "Something went wrong")
-      }).then(() => {
+      }).finally(() => {
         setloading(false)
       })
     reset()
