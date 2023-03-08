@@ -2,7 +2,7 @@ import Cookies from 'js-cookie';
 import React, { useEffect, useState } from "react";
 import { useForm } from 'react-hook-form';
 import { useDispatch } from "react-redux/es/exports";
-import axios from '../../Axios';
+import instance from '../../Axios';
 // import { useHistory } from "react-router";
 import { useHistory } from "react-router-dom";
 // react-bootstrap components
@@ -27,7 +27,7 @@ const LoginPage = () => {
 
     setloading(true)
 
-    await axios.post(`/auth/local`,
+    await instance.post(`/auth/local`,
       {
         username: data.email,
         password: data.password,
