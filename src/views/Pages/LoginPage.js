@@ -33,12 +33,18 @@ const LoginPage = () => {
         password: data.password,
         info: {
           role_id: 1
-        }
+        },
+        
 
-      }).then(async (res) => {
+      },{
+
+        credentials:'include'
+      }
+      
+      ).then(async (res) => {
 
         setloading(false)
-        settoken(res.data.data.token)
+        // settoken(res.data.data.token)
         // setToken(res.data.data.token)
         // setSession(res.data.data.session_id)
         // setUid(res.data.data.user._id)
