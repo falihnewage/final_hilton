@@ -38,16 +38,14 @@ const LoginPage = () => {
 
       },{
 
-        credentials:'include'
+        credentials:'include',
+        withCredentials:true
       }
       
       ).then(async (res) => {
 
         setloading(false)
-        // settoken(res.data.data.token)
-        // setToken(res.data.data.token)
-        // setSession(res.data.data.session_id)
-        // setUid(res.data.data.user._id)
+        
 
         message.success('Login Success')
         reset()
