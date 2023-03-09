@@ -1,0 +1,137 @@
+/*!
+
+ =========================================================
+ * Light Bootstrap Dashboard - v2.0.1
+ =========================================================
+
+ * Product Page: #/product/light-bootstrap-dashboard
+ * Copyright 2020 Creative Tim (#)
+ * License (#/license)
+
+ =========================================================
+
+ * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+ */
+
+@import "lbd/variables";
+@import "lbd/mixins";
+@import "lbd/modals";
+
+@import "lbd/typography";
+
+// Core CSS
+@import "lbd/misc";
+@import "lbd/sidebar-and-main-panel";
+@import "lbd/fixed-plugin";
+@import "lbd/modal";
+
+@import "lbd/buttons";
+@import "lbd/social-buttons";
+@import "lbd/inputs";
+
+@import "lbd/alerts";
+@import "lbd/tables";
+
+@import "lbd/checkbox-radio-switch";
+@import "lbd/navbars";
+@import "lbd/footers";
+@import "lbd/tags";
+@import "lbd/tabs-navs-pagination";
+@import "lbd/progress-bars";
+@import "lbd/sliders";
+
+
+
+// Fancy Stuff
+@import "lbd/dropdown";
+@import "lbd/cards";
+@import "lbd/chartist";
+@import "lbd/responsive";
+@import "lbd/bootstrap-switch";
+
+// Nucleo Icons
+@import "lbd/partial-nucleo-icons";
+
+//plugins css
+@import "lbd/plugins/animate";
+@import "lbd/plugins/sweetalert2";
+
+@import "lbd/plugins/jquery.jvectormap";
+@import "lbd/plugins/bootstrap-table";
+@import "lbd/plugins/datatables.net";
+@import "lbd/plugins/fullcalendar";
+@import "lbd/plugins/chartist";
+@import "lbd/plugins/perfect-scrollbar";
+@import "lbd/plugins/bootstrap-select";
+@import "lbd/plugins/datetime-picker";
+@import "lbd/plugins/nouislider";
+
+// React Differences
+@import "lbdpr/react-differences";
+
+
+
+.tools-card{
+    border: 1px solid #eee;
+    &:hover{
+        background: #F6F7FF;
+        cursor: pointer;
+    }
+    h5{
+    }
+    .img-box{
+        width: 40px;
+        margin-right: 10px;
+    }
+    img{
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+    }
+}
+.inner-body{
+    border-bottom: 1px solid #eee;
+    h4{
+        margin: 0px;
+        padding: 10px 0px;
+        font-size: 18px;
+        font-weight: 500;
+        span{
+            width: 34px;
+            height: 34px;
+            display: inline-block;
+            background-color: #a6ffff;
+            text-align: center;
+            font-size: 18px;
+            margin-right: 10px;
+            border-radius: 50px;
+            color: #05084A;
+        }
+    }
+}
+.mt-32{
+    margin-top: 10px;
+    @media (min-width: $screen-sm-min) {
+            margin-top: 27px;
+    }
+}
+p{
+    color: #838383;
+}
+.thumbnail-round-lg{
+    width: 130px;
+    height: 130px;
+    overflow: hidden;
+    border-radius: 100px;
+    @media screen {
+        
+    }
+}
+
+.bg-first{
+    background: #c5c5c5;
+}
+.bg-sec{
+    background: #eee;
+}
