@@ -27,31 +27,33 @@ const LoginPage = () => {
 
     setloading(true)
 
-    await axios.post(`/auth/local`, {
-      username: data.email,
-      password: data.password,
-      info: {
-        role_id: 1
-      }
+    await axios.post(`/auth/local`,
+      { withCredentials: true },
+      {
+        username: data.email,
+        password: data.password,
+        info: {
+          role_id: 1
+        }
 
-    }).then(async (res) => {
+      }).then(async (res) => {
 
-      setloading(false)
-      settoken(res.data.data.token)
-      setToken(res.data.data.token)
-      setSession(res.data.data.session_id)
-      setUid(res.data.data.user._id)
+        setloading(false)
+        settoken(res.data.data.token)
+        // setToken(res.data.data.token)
+        // setSession(res.data.data.session_id)
+        // setUid(res.data.data.user._id)
 
-      message.success('Login Success')
-      reset()
-      // navigate.push('/admin/dashboard')
+        message.success('Login Success')
+        reset()
+        // navigate.push('/admin/dashboard')
 
-    }).catch((err) => {
+      }).catch((err) => {
 
-      message.error(err.response.data.message || "Something went wrong")
-    }).then(()=>{
-      setloading(false)
-    })
+        message.error(err.response.data.message || "Something went wrong")
+      }).then(() => {
+        setloading(false)
+      })
     reset()
   }
 
