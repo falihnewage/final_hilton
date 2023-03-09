@@ -28,7 +28,6 @@ const LoginPage = () => {
     setloading(true)
 
     await axios.post(`/auth/local`,
-      { withCredentials: true },
       {
         username: data.email,
         password: data.password,
