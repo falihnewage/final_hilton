@@ -19,9 +19,8 @@ const EditQuestion = ({ show, setshow, testItem, setrefetch,seteditReFetch }) =>
         
         await axios.get(`/category_question/${testItem?._id}`,
 
-            {
-                headers: { Authorization: `Bearer ${Cookies.get('token')}` }
-            }).then((response) => {
+            
+            ).then((response) => {
                 
                 if (response.status === 200) {
                     setcurrentEditItem(response.data.data.category_question)
@@ -46,9 +45,8 @@ const EditQuestion = ({ show, setshow, testItem, setrefetch,seteditReFetch }) =>
                 "serial": 1,
                 "question_type": currentEditItem?.question_type
             },
-            {
-                headers: { Authorization: `Bearer ${Cookies.get('token')}` }
-            }).then((response) => {
+            
+            ).then((response) => {
                 
                 if (response.data.message === "Updated") {
                     
