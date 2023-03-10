@@ -127,18 +127,18 @@ const App = () => {
   const getCategoryData = async () => {
     setloading(true)
     await axios.get(`/category`,
-     ).then((res) => {
-        setloading(true)
-        if (res.status == 200) {
-          setnewcategories(res.data.data.categories)
-          // setcategory_id(res.data.data.categories[0]?._id)
+    ).then((res) => {
+      setloading(true)
+      if (res.status == 200) {
+        setnewcategories(res.data.data.categories)
+        // setcategory_id(res.data.data.categories[0]?._id)
 
-        }
-      }).catch((err) => {
+      }
+    }).catch((err) => {
 
-      }).then(() => {
-        setloading(false)
-      })
+    }).then(() => {
+      setloading(false)
+    })
   }
 
 
@@ -148,51 +148,50 @@ const App = () => {
   const getdata = async () => {
     setloading(true)
     await axios.get(`/category_question?offset=0&limit=-1`,
-      ).then(async (res) => {
-        
-        if (res.status == 200) {
+    ).then(async (res) => {
+
+      if (res.status == 200) {
 
 
-          const question = await getReportQuestions(res.data.data.category_questions)
+        const question = await getReportQuestions(res.data.data.category_questions)
 
-          setcategories(question)
-          setcategory_id(question[0]?.category_id)
-          // setcategories(res.data.data.categories)
-          // setcategory_id(res.data.data.categories[0]?._id)
+        setcategories(question)
+        setcategory_id(question[0]?.category_id)
 
-        }
-      }).catch((err) => {
-        message.warn('Something went wrong')
-      }).finally(() => {
-        setloading(false)
-      })
+
+      }
+    }).catch((err) => {
+      message.warn('Something went wrong')
+    }).finally(() => {
+      setloading(false)
+    })
   }
 
   const getAllSubCategory = async () => {
     setloading(true)
     await axios.get(`/sub_category?offset=0&limit=10&where=%7B%22category_id%22%3A%22${category_id}%22%7D`,
 
-      ).then((response) => {
+    ).then((response) => {
 
-        setsubcategories(response.data.data.sub_categories)
-      }).catch((err) => {
+      setsubcategories(response.data.data.sub_categories)
+    }).catch((err) => {
+      console.log(err.data, 'error in qn page');
+    }).finally(() => {
 
-      }).finally(()=>{
-
-        setloading(false)
-      })
+      setloading(false)
+    })
 
   }
 
   const getAllCategoryQuestions = async () => {
     await axios.get(`/category_question?offset=0&limit=-1&where=%7B%22category_id%22%3A%22${category_id}%22%7D`,
 
-      ).then((response) => {
+    ).then((response) => {
 
-        setcategoryQuestions(response.data.data.category_questions)
-      }).catch((err) => {
+      setcategoryQuestions(response.data.data.category_questions)
+    }).catch((err) => {
 
-      })
+    })
 
   }
 
@@ -201,20 +200,20 @@ const App = () => {
     setrefetch(true)
     await axios.delete(`/category_question/${id}`,
 
-      ).then((response) => {
-        // console.log(response);
-        response.data.message === "Deleted" && message.success('Question Deleted Successfully')
-        // setcategoryQuestions(response.data.data.category_questions)
-        // console.log('fn triggered');
-        
-        
-        // setrefetch(false)
-      }).catch((err) => {
+    ).then((response) => {
+      // console.log(response);
+      response.data.message === "Deleted" && message.success('Question Deleted Successfully')
+      // setcategoryQuestions(response.data.data.category_questions)
+      // console.log('fn triggered');
 
-        message.error('Something went wrong')
-      }).finally(()=>{
-        setrefetch(false)
-      })
+
+      // setrefetch(false)
+    }).catch((err) => {
+
+      message.error('Something went wrong')
+    }).finally(() => {
+      setrefetch(false)
+    })
 
   }
   // function to delete question using ID
@@ -238,20 +237,20 @@ const App = () => {
         "question_index": questionIndex === -Infinity ? 1 : questionIndex
 
       },
-      ).then((response) => {
+    ).then((response) => {
 
-        if (response.statusText === "Created") {
-          setModal(!modal)
-          // setrefetch(true)
+      if (response.statusText === "Created") {
+        setModal(!modal)
+        // setrefetch(true)
 
-          reset()
-          setcurrentItem({})
-          message.success('Question Created Successfully')
-          // setrefetch(false)
-        }
-      }).catch((err) => {
+        reset()
+        setcurrentItem({})
+        message.success('Question Created Successfully')
+        // setrefetch(false)
+      }
+    }).catch((err) => {
 
-      })
+    })
 
   }
   // function to Add new question
@@ -262,14 +261,14 @@ const App = () => {
     if (currentEditItem?._id) {
       await axios.get(`/category_question/${currentEditItem?._id}`,
 
-        ).then((response) => {
+      ).then((response) => {
 
-          if (response.status === 200) {
-            setcurrentEditItem(response.data.data.category_question)
-          }
-        }).catch((err) => {
+        if (response.status === 200) {
+          setcurrentEditItem(response.data.data.category_question)
+        }
+      }).catch((err) => {
 
-        })
+      })
     }
 
   }
