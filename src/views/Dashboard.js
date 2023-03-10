@@ -59,9 +59,7 @@ function Dashboard() {
   const getdata = async (toDate, fromDate) => {
 
     await axios.get(`/report/dashboard_statistics?&where={"from":${JSON.stringify(fromDate)},"to":${JSON.stringify(toDate)}}`,
-      {
-        headers: { Authorization: `Bearer ${Cookies.get('token')}` }
-      }).then((res) => {
+      ).then((res) => {
 
         if (res.status == 200) {
           // labels: res?.data?.data?.dataarray[0],
