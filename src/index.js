@@ -37,7 +37,10 @@ root.render(
 
 
 
-        {token ? <Route path="/admin" render={(props) => <AdminLayout {...props} />} /> : <Route path="/auth" render={(props) => <AuthLayout {...props} />} />}
+        <Route path="/admin" render={(props) => <AdminLayout {...props} />} /> 
+        <Route path="/auth" render={(props) => <AuthLayout {...props} />} />
+
+
         {token ? <Redirect from="/" to="/admin/dashboard" /> : <Redirect from="/" to="/auth/login-page" />}
 
       </Switch>
