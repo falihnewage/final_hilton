@@ -175,7 +175,7 @@ const App = () => {
 
       setsubcategories(response.data.data.sub_categories)
     }).catch((err) => {
-      console.log(err.data, 'error in qn page');
+      console.log(err.response.data, 'error in qn page');
     }).finally(() => {
 
       setloading(false)
