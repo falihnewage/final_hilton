@@ -1,7 +1,6 @@
-import Cookies from "js-cookie";
+
 import { useHistory, useParams } from "react-router-dom";
 import axios from '../Axios';
-
 import { Alert, message } from "antd";
 import {
   Button,
@@ -14,7 +13,7 @@ import { Label } from "reactstrap";
 function AddProperty() {
   const { register, handleSubmit, formState: { errors }, reset } = useForm()
   const navigate = useHistory();
-  
+ 
   const { id } = useParams();
   const onSubmit = async (data) => {
     
@@ -28,8 +27,7 @@ function AddProperty() {
         "sales_leader": data.acc_manager,
         "property_type": data.type
       },
-       
-      
+        
         ).then((res) => {
           // console.log(res);
           if (res.status === 201) {

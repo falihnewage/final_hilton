@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from '../../Axios'
 import { Label } from "reactstrap";
-import Cookies from "js-cookie";
 import { useForm } from 'react-hook-form';
 import { useHistory, useParams } from "react-router-dom";
 
@@ -27,8 +26,7 @@ const Editpage = () => {
   const navigate = useHistory();
   const { id } = useParams();
   const { type } = useParams();
-  // console.log(type);
-  // const user_id=Cookies.get('hilton_user_id')
+  
   
  
   const getSingleProperty = async () => {

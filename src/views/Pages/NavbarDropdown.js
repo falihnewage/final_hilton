@@ -1,6 +1,5 @@
 import { message, Popconfirm } from 'antd';
 import axios from "../../Axios";
-import Cookies from 'js-cookie';
 import React from 'react';
 
 

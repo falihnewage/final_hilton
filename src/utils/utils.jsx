@@ -1,14 +1,14 @@
-import Cookies from "js-cookie";
+// import Cookies from "js-cookie";
 
 // SETTTING TOKEN
 // export const setToken = (token) => {
 //     // console.log(token,'token');
 //     Cookies.set("token", token, { sameSite: 'Strict' });
 //   };
-  export const getToken = () => {
-    const token = Cookies.get("token");
-    return token;
-  };
+  // export const getToken = () => {
+  //   const token = Cookies.get("token");
+  //   return token;
+  // };
   // export const removeToken = () => {
   //   Cookies.remove("token");
   // };

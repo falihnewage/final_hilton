@@ -9,7 +9,6 @@ import {
 } from "react-bootstrap";
 
 // core components
-import Cookies from "js-cookie";
 import moment from "moment";
 import axios from "../Axios";
 

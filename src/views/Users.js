@@ -23,7 +23,7 @@ import { useDispatch, useSelector } from 'react-redux';
 // import { GetAllUser } from "Redux/Features/Userslice";
 import axios from '../Axios'
 import { MDBDataTable } from "mdbreact";
-import Cookies from "js-cookie";
+
 function ReactTables() {
   const [singleSelect, setSingleSelect] = React.useState("");
   const [multipleSelect, setMultipleSelect] = React.useState("");

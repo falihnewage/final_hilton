@@ -1,6 +1,5 @@
 import { Alert, message } from 'antd';
 import axios from '../../Axios';
-import Cookies from 'js-cookie';
 import React, { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';

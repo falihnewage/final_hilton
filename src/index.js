@@ -14,12 +14,9 @@ import { store } from './Redux/Store';
 
 import AuthLayout from "layouts/Auth.js";
 import AdminLayout from "layouts/Admin.js";
-import Cookies from "js-cookie";
-import Editpage from "views/Pages/Edit-page";
-import { getToken } from "utils/utils";
-const token = getToken()
-const user = true
 
+
+const token=true
 
 
 

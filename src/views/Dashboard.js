@@ -10,7 +10,7 @@ import axios from '../Axios';
 const { RangePicker } = DatePicker;
 import Chart from 'react-apexcharts'
 // react-bootstrap components
-import Cookies from "js-cookie";
+
 import {
   Card, Col, Container,
   Row

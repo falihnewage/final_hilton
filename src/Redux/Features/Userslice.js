@@ -1,7 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import axios from 'axios';
-// import axios from '../../Axios'
-import Cookies from 'js-cookie';
+
 export const GetAllUser = createAsyncThunk('user/GetAllUser', async (obj, { rejectWithValue }) => {
     // console.log(obj, 'email to api');
     try {

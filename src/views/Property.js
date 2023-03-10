@@ -13,7 +13,6 @@ import {
 } from "react-bootstrap";
 
 // core components
-import Cookies from "js-cookie";
 // const history =useHistory()
 // import { Navigate } from "react-big-calendar";
 import { Table } from 'antd';

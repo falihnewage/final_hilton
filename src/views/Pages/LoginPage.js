@@ -1,4 +1,4 @@
-import Cookies from 'js-cookie';
+
 import React, { useEffect, useState } from "react";
 import { useForm } from 'react-hook-form';
 import { useDispatch } from "react-redux/es/exports";
@@ -100,9 +100,9 @@ const LoginPage = () => {
   });
 
   useEffect(() => {
-    // if (Cookies.get('token')) {
+    
     //   window.location.href = "/admin/dashboard"
-    // }
+    
     
   }, [])
 
