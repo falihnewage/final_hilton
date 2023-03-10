@@ -18,9 +18,7 @@ import Cookies from "js-cookie";
 // import { Navigate } from "react-big-calendar";
 import { Table } from 'antd';
 import { useDispatch } from "react-redux";
-// import { Login } from "Redux/Features/Authslice";
-// import { GetAllUser } from "Redux/Features/Userslice";
-import { getToken } from 'utils/utils';
+
 
 
 function ReactTables() {
@@ -31,7 +29,6 @@ function ReactTables() {
   const [Loading, setLoading] = useState(false)
   const [numberOfPages, setnumberOfPages] = useState(1)
   const navigate = useHistory();
-  const token = getToken()
   const dispatch = useDispatch()
   const history = useHistory()
   const [sort, setsort] = useState(null)

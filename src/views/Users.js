@@ -24,7 +24,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import axios from '../Axios'
 import { MDBDataTable } from "mdbreact";
 import Cookies from "js-cookie";
-import { getToken } from "utils/utils";
 function ReactTables() {
   const [singleSelect, setSingleSelect] = React.useState("");
   const [multipleSelect, setMultipleSelect] = React.useState("");
@@ -36,7 +35,7 @@ function ReactTables() {
     rows: []
   });
   const dispatch = useDispatch()
-  const token = getToken()
+  
   const [sort, setsort] = useState(null)
   const [sortingOrder, setsortingOrder] = useState({
     name: false,
@@ -128,9 +127,7 @@ function ReactTables() {
     await axios.get(`/hilton_user?offset=${page * 10}&limit=10&${sort && `sort=${sort}`}`, {
 
     },
-      {
-        headers: { Authorization: `Bearer ${token}` }
-      }).then((response) => {
+      ).then((response) => {
 
         if (response.status === 200) {
 
