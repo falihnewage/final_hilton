@@ -146,9 +146,7 @@ function ReactTables() {
     setLoading(true)
     await axios.get(`/report?offset=${page * 10}&limit=10&where={"is_completed":true}&${sort && `sort=${sort}`}`,
 
-      {
-        headers: { Authorization: `Bearer ${Cookies.get('token')}` }
-      }).then((response) => {
+      ).then((response) => {
 
         setReport(response.data.data.reports)
         settotalPages(response.data.data.count)

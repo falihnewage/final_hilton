@@ -128,9 +128,7 @@ const App = () => {
   const getCategoryData = async () => {
     setloading(true)
     await axios.get(`/category`,
-      {
-        headers: { Authorization: `Bearer ${Cookies.get('token')}` }
-      }).then((res) => {
+     ).then((res) => {
         setloading(true)
         if (res.status == 200) {
           setnewcategories(res.data.data.categories)
@@ -151,9 +149,7 @@ const App = () => {
   const getdata = async () => {
     setloading(true)
     await axios.get(`/category_question?offset=0&limit=-1`,
-      {
-        headers: { Authorization: `Bearer ${Cookies.get('token')}` }
-      }).then(async (res) => {
+      ).then(async (res) => {
         
         if (res.status == 200) {
 
@@ -177,9 +173,7 @@ const App = () => {
     setloading(true)
     await axios.get(`/sub_category?offset=0&limit=10&where=%7B%22category_id%22%3A%22${category_id}%22%7D`,
 
-      {
-        headers: { Authorization: `Bearer ${Cookies.get('token')}` }
-      }).then((response) => {
+      ).then((response) => {
 
         setsubcategories(response.data.data.sub_categories)
       }).catch((err) => {
@@ -194,9 +188,7 @@ const App = () => {
   const getAllCategoryQuestions = async () => {
     await axios.get(`/category_question?offset=0&limit=-1&where=%7B%22category_id%22%3A%22${category_id}%22%7D`,
 
-      {
-        headers: { Authorization: `Bearer ${Cookies.get('token')}` }
-      }).then((response) => {
+      ).then((response) => {
 
         setcategoryQuestions(response.data.data.category_questions)
       }).catch((err) => {
@@ -210,9 +202,7 @@ const App = () => {
     setrefetch(true)
     await axios.delete(`/category_question/${id}`,
 
-      {
-        headers: { Authorization: `Bearer ${Cookies.get('token')}` }
-      }).then((response) => {
+      ).then((response) => {
         // console.log(response);
         response.data.message === "Deleted" && message.success('Question Deleted Successfully')
         // setcategoryQuestions(response.data.data.category_questions)
@@ -249,9 +239,7 @@ const App = () => {
         "question_index": questionIndex === -Infinity ? 1 : questionIndex
 
       },
-      {
-        headers: { Authorization: `Bearer ${Cookies.get('token')}` }
-      }).then((response) => {
+      ).then((response) => {
 
         if (response.statusText === "Created") {
           setModal(!modal)
@@ -275,9 +263,7 @@ const App = () => {
     if (currentEditItem?._id) {
       await axios.get(`/category_question/${currentEditItem?._id}`,
 
-        {
-          headers: { Authorization: `Bearer ${Cookies.get('token')}` }
-        }).then((response) => {
+        ).then((response) => {
 
           if (response.status === 200) {
             setcurrentEditItem(response.data.data.category_question)

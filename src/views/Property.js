@@ -205,9 +205,7 @@ function ReactTables() {
   const getdata = async () => {
     setLoading(true)
     await axios.get(`/property?offset=${page * 10}&limit=10&${sort && `sort=${sort}`}`,
-      {
-        headers: { Authorization: `Bearer ${Cookies.get('token')}` }
-      }).then((res) => {
+      ).then((res) => {
 
         if (res.status == 200) {
           setproperties(res.data.data.properties)
@@ -236,9 +234,7 @@ function ReactTables() {
   const data = basicData.rows
   const deleteItem = (item) => {
     axios.delete(`/property/${item}`,
-      {
-        headers: { Authorization: `Bearer ${Cookies.get('token')}` }
-      }).then((response) => {
+      ).then((response) => {
 
         if (response.statusText === "OK") {
           setrefetch(true)

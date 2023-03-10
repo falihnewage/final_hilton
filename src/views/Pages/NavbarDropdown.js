@@ -15,9 +15,7 @@ const handleLogOut = async (e) => {
             "session_id": session_id
 
         },
-        {
-            headers: { Authorization: `Bearer ${Cookies.get('token')}` }
-        }).then(async (response) => {
+        ).then(async (response) => {
 
             if (response.status === 200) {
                 await removeToken()
