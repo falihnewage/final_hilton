@@ -15,7 +15,7 @@ import {
   Card, Col, Container,
   Row
 } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 const { allowedMaxDays, allowedDays, allowedRange,
   beforeToday, afterToday, combine } = DateRangePicker;
 
@@ -37,6 +37,7 @@ function Dashboard() {
 
   const [dates, setDates] = useState(null);
   const [value, setValue] = useState(null);
+  const navigate =useHistory()
   const disabledDate = (current) => {
 
     if (!dates) {
@@ -79,8 +80,13 @@ function Dashboard() {
           })
         }
       }).catch((err) => {
-        console.log(err.response.data, 'error in qn page');
-        message.warn('Something went wrong')
+        // console.log(err.response.data, 'error in qn page');
+        
+        if (err?.response?.data?.statusCode===401) {
+          navigate.push('/admin/dashboard')
+        } else {
+          message.error(err.response.data.message || "Something went wrong")
+        }
       })
   }
   
