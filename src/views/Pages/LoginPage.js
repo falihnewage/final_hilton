@@ -53,41 +53,41 @@ const LoginPage = () => {
 console.log(response,'rs');
    
 
-    setloading(true)
-    instance.defaults.withCredentials = true
-    await instance.post(`/auth/local`,
-      {
-        username: data.email,
-        password: data.password,
-        info: {
-          role_id: 1
-        },
+    // setloading(true)
+    // instance.defaults.withCredentials = true
+    // await instance.post(`/auth/local`,
+    //   {
+    //     username: data.email,
+    //     password: data.password,
+    //     info: {
+    //       role_id: 1
+    //     },
 
 
-      },
-      {
+    //   },
+    //   {
 
 
-        withCredentials: true,
-        credentials: 'include'
-      }
+    //     withCredentials: true,
+    //     credentials: 'include'
+    //   }
 
-    ).then(async (res) => {
+    // ).then(async (res) => {
 
-      setloading(false)
+    //   setloading(false)
 
 
-      message.success('Login Success')
-      reset()
-      // navigate.push('/admin/dashboard')
+    //   message.success('Login Success')
+    //   reset()
+    //   // navigate.push('/admin/dashboard')
 
-    }).catch((err) => {
+    // }).catch((err) => {
 
-      message.error(err.response.data.message || "Something went wrong")
-    }).finally(() => {
-      setloading(false)
-    })
-    reset()
+    //   message.error(err.response.data.message || "Something went wrong")
+    // }).finally(() => {
+    //   setloading(false)
+    // })
+    // reset()
   }
 
   React.useEffect(() => {
