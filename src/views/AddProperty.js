@@ -9,12 +9,12 @@ import {
 } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { Label } from "reactstrap";
-import { getUid } from "utils/utils";
+// import { getUid } from "utils/utils";
 
 function AddProperty() {
   const { register, handleSubmit, formState: { errors }, reset } = useForm()
   const navigate = useHistory();
-  const user_id=getUid()
+  // const user_id=getUid()
   const { id } = useParams();
   const onSubmit = async (data) => {
     
@@ -22,7 +22,7 @@ function AddProperty() {
       await axios.post(`/property`, {
         "name": data?.name,
         "number": data?.number,
-        "user_id": user_id,
+        // "user_id": user_id,
         "general_manager": data.gm,
         "regional_operator": data.rg_manager,
         "sales_leader": data.acc_manager,

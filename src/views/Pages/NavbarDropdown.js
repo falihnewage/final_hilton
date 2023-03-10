@@ -3,9 +3,7 @@ import axios from "../../Axios";
 import Cookies from 'js-cookie';
 import React from 'react';
 
-import { getSession } from 'utils/utils';
 
-// const session_id = getSession()
 const handleLogOut = async (e) => {
 
     await axios.post(`/auth/logout`,
