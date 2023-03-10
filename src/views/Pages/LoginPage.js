@@ -22,26 +22,26 @@ const LoginPage = () => {
   const dispatch = useDispatch()
   const navigate = useHistory()
   const { register, handleSubmit, formState: { errors }, reset } = useForm()
-  const requestOptions = {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    credentials: 'include',
-    mode: "cors", // no-cors, *cors, same-origin
-    cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-    credentials: "same-origin", // include, *same-origin, omit
-    body: JSON.stringify({
-      username: data.email,
-      password: data.password,
-      info: {
-        role_id: 1
-      },
-    })
-  };
+  
 
 
   const onSubmit = async (data) => {
     // navigate.push('/admin/dashboard')
-
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
+      mode: "cors", // no-cors, *cors, same-origin
+      cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+      credentials: "same-origin", // include, *same-origin, omit
+      body: JSON.stringify({
+        username: data.email,
+        password: data.password,
+        info: {
+          role_id: 1
+        },
+      })
+    };
    
 
     
