@@ -28,9 +28,9 @@ function AddProperty() {
         "sales_leader": data.acc_manager,
         "property_type": data.type
       },
-        {
-          headers: { Authorization: `Bearer ${Cookies.get('token')}` }
-        }).then((res) => {
+       
+      
+        ).then((res) => {
           // console.log(res);
           if (res.status === 201) {
             message.success('Property Added Successfuly')

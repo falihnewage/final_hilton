@@ -8,9 +8,8 @@ export const GetAllUser = createAsyncThunk('user/GetAllUser', async (obj, { reje
         const res = await axios.get('/hilton_user?offset=0&limit=10', {
             email: obj
         },
-            {
-                headers: { Authorization:`Bearer ${Cookies.get('token')}` }
-            })
+            
+            )
         return res
     } catch (error) {
         return rejectWithValue(error.response.data)

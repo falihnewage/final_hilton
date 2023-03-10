@@ -28,14 +28,14 @@ const Editpage = () => {
   const { id } = useParams();
   const { type } = useParams();
   // console.log(type);
-  const user_id=Cookies.get('hilton_user_id')
+  // const user_id=Cookies.get('hilton_user_id')
   
  
   const getSingleProperty = async () => {
     await axios.get(`/property/${id}`,
-      {
-        headers: { Authorization: `Bearer ${Cookies.get('token')}` }
-      }).then((res) => {
+      
+    
+      ).then((res) => {
         
         if (res.status == 200) {
           setproperty(res.data.data.property)
@@ -49,7 +49,7 @@ const Editpage = () => {
         "active": true,
         "name": property?.name,
         "number": property?.number,
-        "user_id": user_id,
+        // "user_id": user_id,
         "general_manager": property?.general_manager,
         "regional_operator": property?.regional_operator,
         "sales_leader":property?.sales_leader ,
@@ -63,14 +63,14 @@ const Editpage = () => {
       "active": true,
       "name": data.name ? data.name : property?.name,
       "number": data.number ? data.number : property?.number,
-      "user_id": user_id,
+      // "user_id": user_id,
       "general_manager": data.gm,
       "regional_operator": data.rg_manager,
       "sales_leader": data.acc_manager,
       "property_type": data.type
-    }, {
-      headers: { Authorization: `Bearer ${Cookies.get('token')}` }
-    }).then((response) => {
+    },
+     
+    ).then((response) => {
       
       if (response.status === 200) {
         navigate.push(`/admin/Property/${parseInt(type)+1}`)
