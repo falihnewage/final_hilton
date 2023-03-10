@@ -2,25 +2,21 @@ import { message, Popconfirm } from 'antd';
 import axios from "../../Axios";
 import Cookies from 'js-cookie';
 import React from 'react';
-import { removeToken } from 'utils/utils';
-import { removeUid } from 'utils/utils';
-import { removeSession } from 'utils/utils';
+
 import { getSession } from 'utils/utils';
 
-const session_id = getSession()
+// const session_id = getSession()
 const handleLogOut = async (e) => {
 
     await axios.post(`/auth/logout`,
-        {
-            "session_id": session_id
+        // {
+        //     "session_id": session_id
 
-        },
+        // },
         ).then(async (response) => {
 
             if (response.status === 200) {
-                await removeToken()
-                await removeUid()
-                await removeSession()
+               
                 window.location.href = "/auth/login-page"
 
             }
