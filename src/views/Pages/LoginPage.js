@@ -11,9 +11,8 @@ import {
   Button,
   Card, Col, Container, Form
 } from "react-bootstrap";
-// import { setToken } from 'utils/utils';
-// import { setSession } from 'utils/utils';
-// import { setUid } from 'utils/utils';
+
+
 
 const LoginPage = () => {
   const [cardClasses, setCardClasses] = React.useState("card-hidden");
@@ -105,7 +104,7 @@ const LoginPage = () => {
     //   window.location.href = "/admin/dashboard"
     // }
     
-  }, [token])
+  }, [])
 
 
   return (
