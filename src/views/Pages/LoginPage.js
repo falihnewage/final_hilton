@@ -23,44 +23,68 @@ const LoginPage = () => {
   const navigate = useHistory()
   const { register, handleSubmit, formState: { errors }, reset } = useForm()
 
-  
+
   const onSubmit = async (data) => {
     // navigate.push('/admin/dashboard')
 
-    setloading(true)
-    instance.defaults.withCredentials = true
-    await instance.post(`/auth/local`,
-      {
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      mode: "cors", // no-cors, *cors, same-origin
+      cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+      credentials: "same-origin", // include, *same-origin, omit
+      body: JSON.stringify({
         username: data.email,
         password: data.password,
         info: {
           role_id: 1
         },
+      })
+    };
+
+    const getApiData = async () => {
+      const response = await fetch(
+        "https://hiltondevapi.newagesme.com/",requestOptions
+      ).then((response) => response.json());
+
+      // update the state
+console.log(response,'rs');
+    };
+
+    // setloading(true)
+    // instance.defaults.withCredentials = true
+    // await instance.post(`/auth/local`,
+    //   {
+    //     username: data.email,
+    //     password: data.password,
+    //     info: {
+    //       role_id: 1
+    //     },
 
 
-      },
-      {
+    //   },
+    //   {
 
 
-        withCredentials: true,
-        credentials: 'include'
-      }
+    //     withCredentials: true,
+    //     credentials: 'include'
+    //   }
 
-    ).then(async (res) => {
+    // ).then(async (res) => {
 
-      setloading(false)
+    //   setloading(false)
 
 
-      message.success('Login Success')
-      reset()
-      // navigate.push('/admin/dashboard')
+    //   message.success('Login Success')
+    //   reset()
+    //   // navigate.push('/admin/dashboard')
 
-    }).catch((err) => {
+    // }).catch((err) => {
 
-      message.error(err.response.data.message || "Something went wrong")
-    }).finally(() => {
-      setloading(false)
-    })
+    //   message.error(err.response.data.message || "Something went wrong")
+    // }).finally(() => {
+    //   setloading(false)
+    // })
     reset()
   }
 
@@ -74,7 +98,7 @@ const LoginPage = () => {
     if (Cookies.get('token')) {
       window.location.href = "/admin/dashboard"
     }
-
+    getApiData()
   }, [token])
 
 
