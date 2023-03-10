@@ -46,7 +46,7 @@ const LoginPage = () => {
 
     
       const response = await fetch(
-        "https://hiltondevapi.newagesme.com/",requestOptions
+        "https://hiltondevapi.newagesme.com/auth/local",requestOptions
       ).then((response) => response.json());
 
       // update the state
