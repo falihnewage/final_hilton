@@ -83,7 +83,7 @@ function Dashboard() {
         // console.log(err.response.data, 'error in qn page');
         
         if (err?.response?.data?.statusCode===401) {
-          navigate.push('/admin/dashboard')
+          navigate.push('/auth/login-page')
         } else {
           message.error(err.response.data.message || "Something went wrong")
         }
