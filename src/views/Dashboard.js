@@ -79,6 +79,7 @@ function Dashboard() {
           })
         }
       }).catch((err) => {
+        console.log(err.response.data, 'error in qn page');
         message.warn('Something went wrong')
       })
   }
