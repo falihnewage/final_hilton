@@ -77,7 +77,7 @@ const LoginPage = () => {
     await axios.get(`hilton_user/detail/me`,
     ).then((res) => {
 
-     console.log(res,'response');
+     console.log(res?.data?.data?.user,'response');
     }).catch((err) => {
       message.warn('Something went wrong')
     })
