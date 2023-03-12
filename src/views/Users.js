@@ -22,7 +22,7 @@ import { Label } from "reactstrap";
 import { useDispatch, useSelector } from 'react-redux';
 // import { GetAllUser } from "Redux/Features/Userslice";
 import axios from '../Axios'
-import { MDBDataTable } from "mdbreact";
+
 
 function ReactTables() {
   const [singleSelect, setSingleSelect] = React.useState("");
@@ -174,7 +174,7 @@ function ReactTables() {
             <Card>
               <Card.Body className="p-0">
 
-                {/* <MDBDataTable data={basicData} /> */}
+                
                 <Table
                   pagination={
                     {
