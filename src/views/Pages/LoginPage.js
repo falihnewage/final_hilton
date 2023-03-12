@@ -77,7 +77,10 @@ const LoginPage = () => {
     await axios.get(`hilton_user/detail/me`,
     ).then((res) => {
 
-     console.log(res?.data?.data?.user,'response');
+    //  console.log(res?.data?.data?.user,'response');
+     if (res?.data?.data?.user) {
+      navigate.push('/auth/login-page')
+     }
     }).catch((err) => {
       message.warn('Something went wrong')
     })
