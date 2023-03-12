@@ -79,10 +79,10 @@ const LoginPage = () => {
 
     //  console.log(res?.data?.data?.user,'response');
      if (res?.data?.data?.user) {
-      navigate.push('/auth/login-page')
+      navigate.push('/admin/dashboard')
      }
     }).catch((err) => {
-      message.warn('Something went wrong')
+      // message.warn('Something went wrong')
     })
     
     
