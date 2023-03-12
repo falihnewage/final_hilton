@@ -6,6 +6,7 @@ import instance from '../../Axios';
 import { useHistory } from "react-router-dom";
 // react-bootstrap components
 import { message } from "antd";
+import axios from '../../Axios'
 import {
   Button,
   Card, Col, Container, Form
@@ -71,9 +72,15 @@ const LoginPage = () => {
     }, 1000);
   });
 
-  useEffect(() => {
+  useEffect(async() => {
     
-    //   window.location.href = "/admin/dashboard"
+    await axios.get(`hilton_user/detail/me`,
+    ).then((res) => {
+
+     console.log(res,'response');
+    }).catch((err) => {
+      message.warn('Something went wrong')
+    })
     
     
   }, [])
