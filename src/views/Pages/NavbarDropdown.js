@@ -13,7 +13,7 @@ const handleLogOut = async (e) => {
         ).then(async (response) => {
 
             if (response.status === 200) {
-               
+                message.success('Logout Success')
                 window.location.href = "/auth/login-page"
 
             }
