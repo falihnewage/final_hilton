@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import { useForm } from 'react-hook-form';
 import { useDispatch } from "react-redux/es/exports";
@@ -7,8 +6,6 @@ import instance from '../../Axios';
 import { useHistory } from "react-router-dom";
 // react-bootstrap components
 import { message } from "antd";
-import axios from '../../Axios';
-
 import {
   Button,
   Card, Col, Container, Form
@@ -74,15 +71,9 @@ const LoginPage = () => {
     }, 1000);
   });
 
-  useEffect(async() => {
+  useEffect(() => {
     
-    await axios.get(`hilton_user/detail/me`,
-    ).then((res) => {
-
-      console.log(res,res);
-    }).catch((err) => {
-      message.warn('Something went wrong')
-    })
+    //   window.location.href = "/admin/dashboard"
     
     
   }, [])

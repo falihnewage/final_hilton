@@ -270,7 +270,34 @@ function Dashboard() {
                   <Chart options={cData.options} series={graphData?.series} type='line' height={400} width={'90%'} />
 
                 </Spin>
-                
+                {/* <ChartistGraph
+                  type="Line"
+                  data={{
+                    labels: graphData?.labels,
+                    series: [
+                      graphData?.series,
+                    ],
+                  }}
+                  options={{
+                    lineSmooth: true,
+                    height: "260px",
+                    axisY: {
+                      offset: 40,
+                      labelInterpolationFnc: function (value) {
+                        return "" + value;
+                      },
+                    },
+                    low: 10,
+                    high: 110,
+                    classNames: {
+                      point: "ct-point ct-green",
+                      line: "ct-line ct-green",
+                    },
+                    chartPadding: {
+                      right: -25,
+                    },
+                  }}
+                /> */}
               </Card.Body>
             </Card>
           </Col>
