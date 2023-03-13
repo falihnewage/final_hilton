@@ -161,7 +161,11 @@ const App = () => {
 
       }
     }).catch((err) => {
-      message.warn('Something went wrong')
+      if (err?.response?.data?.statusCode === 401) {
+        navigate.push('/auth/login-page')
+      } else {
+        message.error(err.response.data.message || "Something went wrong")
+      }
     }).finally(() => {
       setloading(false)
     })
