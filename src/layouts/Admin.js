@@ -62,7 +62,7 @@ function Admin() {
     }).catch((errr)=>{
       navigate.push('/auth/login-page')
     })
-  }, [])
+  }, [window.location.href])
   
   return (
     <>
