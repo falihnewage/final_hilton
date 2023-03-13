@@ -1,5 +1,5 @@
-import React from "react";
-import { Switch, Route } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Switch, Route, useHistory } from "react-router-dom";
 // react-bootstrap components
 import {
   Badge,
@@ -24,7 +24,7 @@ import FixedPlugin from "components/FixedPlugin/FixedPlugin.js";
 
 // dinamically create dashboard routes
 import routes from "routes.js";
-
+import instance from '../Axios'
 import image1 from "assets/img/full-screen-image-1.jpg";
 import image2 from "assets/img/full-screen-image-2.jpg";
 import image3 from "assets/img/full-screen-image-3.jpg";
@@ -33,6 +33,7 @@ import image4 from "assets/img/full-screen-image-4.jpg";
 function Admin() {
   const [sidebarImage, setSidebarImage] = React.useState(image3);
   const [sidebarBackground, setSidebarBackground] = React.useState("black");
+  const navigate = useHistory()
   const getRoutes = (routes) => {
     return routes.map((prop, key) => {
       if (prop.collapse) {
@@ -51,6 +52,14 @@ function Admin() {
       }
     });
   };
+  useEffect(() => {
+    instance.get(`/hilton_user/detail/me`)
+    .then((response)=>{
+      console.log(response?.data?.data?.user);
+      response?.data?.data?.user ?navigate.push('/admin/dashboard'):null
+    })
+  }, [])
+  
   return (
     <>
       <div className="wrapper">

@@ -76,7 +76,6 @@ const LoginPage = () => {
     //   window.location.href = "/admin/dashboard"
     instance.get(`/hilton_user/detail/me`)
     .then((response)=>{
-      console.log(response?.data?.data?.user);
       response?.data?.data?.user ?navigate.push('/admin/dashboard'):null
     })
     
