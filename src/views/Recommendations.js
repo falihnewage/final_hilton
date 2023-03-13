@@ -172,6 +172,7 @@ const navigate= useHistory()
         }
 
       }).catch((err) => {
+        
         if (err?.response?.data?.statusCode === 401) {
           navigate.push('/auth/login-page')
         } else {
