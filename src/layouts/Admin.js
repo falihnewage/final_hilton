@@ -34,6 +34,7 @@ function Admin() {
   const [sidebarImage, setSidebarImage] = React.useState(image3);
   const [sidebarBackground, setSidebarBackground] = React.useState("black");
   const navigate = useHistory()
+  const url = window.location.pathname.split('/').pop();
   const getRoutes = (routes) => {
     return routes.map((prop, key) => {
       if (prop.collapse) {
@@ -62,7 +63,7 @@ function Admin() {
     }).catch((errr)=>{
       navigate.push('/auth/login-page')
     })
-  }, [])
+  }, [url])
   
   return (
     <>
