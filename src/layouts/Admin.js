@@ -58,7 +58,9 @@ function Admin() {
     instance.get(`/hilton_user/detail/me`)
     .then((response)=>{
       console.log(response?.data?.data?.user);
-      !response?.data?.data?.user ?navigate.push('/auth/login-page'):null
+      // !response?.data?.data?.user ?navigate.push('/auth/login-page'):null
+    }).catch((errr)=>{
+      navigate.push('/auth/login-page')
     })
   }, [])
   
