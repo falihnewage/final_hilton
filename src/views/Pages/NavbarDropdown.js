@@ -1,9 +1,11 @@
 import { message, Popconfirm } from 'antd';
 import axios from "../../Axios";
 import React from 'react';
+import { useHistory } from 'react-router';
 
-
+const navigate = useHistory();
 const handleLogOut = async (e) => {
+    
 
     await axios.post(`/auth/logout`,
         // {
@@ -14,7 +16,7 @@ const handleLogOut = async (e) => {
 
             if (response.status === 200) {
                 message.success('Logout Success')
-                window.location.href = "/auth/login-page"
+                navigate.push(`/auth/login-page`)
 
             }
         }).catch((err) => {
