@@ -55,7 +55,7 @@ function Admin() {
   };
 
   useEffect(() => {
-    
+    console.log(window.location.href,'path');
     instance.get(`/hilton_user/detail/me`)
     .then((response)=>{
       // console.log(response?.data?.data?.user);
