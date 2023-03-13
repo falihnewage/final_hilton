@@ -11,6 +11,7 @@ import {
 // core components
 import moment from "moment";
 import axios from "../Axios";
+import { useHistory } from 'react-router';
 
 function ReactTables() {
   
@@ -140,7 +141,7 @@ function ReactTables() {
     },
 
   ];
-
+const navigate= useHistory()
   const getAllReports = async (page) => {
     setLoading(true)
     await axios.get(`/report?offset=${page * 10}&limit=10&where={"is_completed":true}&${sort && `sort=${sort}`}`,
@@ -171,7 +172,11 @@ function ReactTables() {
         }
 
       }).catch((err) => {
-        message.warn('something went wrong')
+        if (err?.response?.data?.statusCode === 401) {
+          navigate.push('/auth/login-page')
+        } else {
+          message.error(err.response.data.message || "Something went wrong")
+        }
       })
 
   }
