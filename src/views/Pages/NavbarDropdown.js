@@ -33,7 +33,8 @@ const confirm = (e) => {
 
 
 
-const NavDropDown = () => (
+const NavDropDown = () => {
+    return(
 
     <Popconfirm
         title="Are you sure to Logout?"
@@ -47,5 +48,5 @@ const NavDropDown = () => (
             Log out</a>
     </Popconfirm>
 );
-
+}
 export default NavDropDown;
