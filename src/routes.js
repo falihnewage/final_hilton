@@ -9,6 +9,7 @@ import AddProperty from "views/AddProperty";
 // import AddQuestion from "views/Components/AddQuestion";
 import Editpage from "views/Pages/Edit-page";
 import LoginPage from "views/Pages/LoginPage.js";
+import PageNotFound from "views/Pages/Pagenotfound";
 
 var routes = [
   {
@@ -76,6 +77,21 @@ var routes = [
     layout: "/admin",
     name: "AddProperty",
     component: AddProperty,
+  },
+  {
+    path: "*",
+    layout: "/admin",
+    name: "Notfound",
+    icon: "nc-icon nc-chart-pie-35",
+    component: PageNotFound,
+    
+  },
+  {
+    path: "*",
+    layout: "/auth",
+    name: "Notfound",
+    icon: "nc-icon nc-circle-09",
+    component: PageNotFound,
   },
   // {
   //   path: "/add-question",
