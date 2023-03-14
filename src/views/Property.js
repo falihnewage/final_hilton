@@ -20,7 +20,7 @@ import { useDispatch } from "react-redux";
 
 
 
-function ReactTables() {
+const Property=()=> {
 
   const [properties, setproperties] = useState([])
   const [currentPage, setcurrentPage] = useState(0)
@@ -307,4 +307,4 @@ function ReactTables() {
   );
 }
 
-export default ReactTables;
+export default Property;

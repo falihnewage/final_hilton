@@ -24,7 +24,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import axios from '../Axios'
 
 
-function ReactTables() {
+const Users=()=> {
   const [singleSelect, setSingleSelect] = React.useState("");
   const [multipleSelect, setMultipleSelect] = React.useState("");
   const [User, setUser] = useState([])
@@ -200,4 +200,4 @@ function ReactTables() {
   );
 }
 
-export default ReactTables;
+export default Users;

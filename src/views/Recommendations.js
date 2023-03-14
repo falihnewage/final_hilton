@@ -13,7 +13,7 @@ import moment from "moment";
 import axios from "../Axios";
 import { useHistory } from 'react-router';
 
-function ReactTables() {
+const Reports=()=> {
   
   const [Report, setReport] = useState([])
   const [Loading, setLoading] = useState(false)
@@ -227,4 +227,4 @@ const navigate= useHistory()
   );
 }
 
-export default ReactTables;
+export default Reports;
