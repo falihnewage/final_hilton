@@ -80,7 +80,7 @@ function Dashboard() {
         })
       }
     }).catch((err) => {
-      // console.log(err.response.data, 'error in qn page');
+      
 
       if (err?.response?.data?.statusCode === 401) {
         navigate.push('/auth/login-page')

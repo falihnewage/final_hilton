@@ -29,7 +29,7 @@ function AddProperty() {
       },
         
         ).then((res) => {
-          // console.log(res);
+          
           if (res.status === 201) {
             message.success('Property Added Successfuly')
             reset()

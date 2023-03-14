@@ -179,7 +179,7 @@ const App = () => {
 
       setsubcategories(response.data.data.sub_categories)
     }).catch((err) => {
-      // console.log(err.response.data, 'error in qn page');
+      
     }).finally(() => {
 
       setloading(false)
@@ -205,10 +205,10 @@ const App = () => {
     await axios.delete(`/category_question/${id}`,
 
     ).then((response) => {
-      // console.log(response);
+      
       response.data.message === "Deleted" && message.success('Question Deleted Successfully')
       // setcategoryQuestions(response.data.data.category_questions)
-      // console.log('fn triggered');
+      
 
 
       // setrefetch(false)
