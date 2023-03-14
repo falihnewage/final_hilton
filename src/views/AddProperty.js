@@ -10,7 +10,7 @@ import { useForm } from "react-hook-form";
 import { Label } from "reactstrap";
 
 
-function AddProperty() {
+const AddProperty=()=> {
   const { register, handleSubmit, formState: { errors }, reset } = useForm()
   const navigate = useHistory();
  

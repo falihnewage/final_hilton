@@ -19,7 +19,7 @@ import { Link, useHistory } from "react-router-dom";
 const { allowedMaxDays, allowedDays, allowedRange,
   beforeToday, afterToday, combine } = DateRangePicker;
 
-function Dashboard() {
+const Dashboard=()=> {
   const [graphData, setgrapgData] = useState(
 
     {
