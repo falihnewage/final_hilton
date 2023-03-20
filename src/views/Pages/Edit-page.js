@@ -19,10 +19,11 @@ import {
 } from "react-bootstrap";
 // import { useForm } from "react-hook-form";
 // import { Label } from "reactstrap";
-import { Alert, message } from "antd";
+import { Alert, message, Spin } from "antd";
 
 const Editpage = () => {
   const [property, setproperty] = useState()
+  const [loading, setloading] = useState(false)
   const navigate = useHistory();
   const { id } = useParams();
   const { type } = useParams();
@@ -30,6 +31,7 @@ const Editpage = () => {
   
  
   const getSingleProperty = async () => {
+    setloading(true)
     await axios.get(`/property/${id}`,
       
     
@@ -38,6 +40,10 @@ const Editpage = () => {
         if (res.status == 200) {
           setproperty(res.data.data.property)
         }
+      }).catch((err)=>{
+
+      }).finally(()=>{
+        setloading(false)
       })
   }
   
@@ -90,7 +96,7 @@ const Editpage = () => {
         <Card.Body>
           <Row>
             <Col lg="6">
-              {property?.name && <Form onSubmit={handleSubmit(onSubmit)}>
+              {property?.name ? <Form onSubmit={handleSubmit(onSubmit)}>
                 <Form.Group>
                   <Label>Property Name</Label>
                   <Form.Control
@@ -209,7 +215,7 @@ const Editpage = () => {
                     </Button>
                   </Col>
                 </Row>
-              </Form>}
+              </Form>:<Spin spinning={loading}></Spin>}
 
 
             </Col>
