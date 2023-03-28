@@ -7,9 +7,11 @@ import { useHistory } from "react-router-dom";
 // react-bootstrap components
 import { message } from "antd";
 import {
+  Alert,
   Button,
   Card, Col, Container, Form
 } from "react-bootstrap";
+import axios from "axios";
 
 
 
@@ -21,7 +23,15 @@ const LoginPage = () => {
   const navigate = useHistory()
   const { register, handleSubmit, formState: { errors }, reset } = useForm()
   
-
+const SsoLogin =()=>{
+  axios.get(`https://hiltondevapi.newagesme.com/auth/saml/login`)
+  .then((response)=>{
+    // response?.data?.data?.user ?navigate.push('/admin/dashboard'):null
+    console.log(response);
+  }).catch((err)=>{
+    
+  })
+}
 
   const onSubmit = async (data) => {
   setloading(true)
@@ -140,6 +150,10 @@ const LoginPage = () => {
                       </Form.Group>
                       <Button disabled={loading} className="btn-lg w-100" type="submit" variant="warning">
                         Login
+
+                      </Button>
+                      <Button onClick={()=>SsoLogin()} disabled={loading} className="btn-lg w-100" type="submit" variant="warning">
+                        Login With SSO
 
                       </Button>
                     </Card.Body>
