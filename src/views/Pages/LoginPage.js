@@ -22,19 +22,19 @@ const LoginPage = () => {
   const dispatch = useDispatch()
   const navigate = useHistory()
   const { register, handleSubmit, formState: { errors }, reset } = useForm()
-  
-const SsoLogin =()=>{
-  axios.get(`https://hiltondevapi.newagesme.com/auth/saml/login`)
-  .then((response)=>{
-    // response?.data?.data?.user ?navigate.push('/admin/dashboard'):null
-    console.log(response);
-  }).catch((err)=>{
-    
-  })
-}
+
+  const SsoLogin = () => {
+    axios.get(`https://hiltondevapi.newagesme.com/auth/saml/login`)
+      .then((response) => {
+        // response?.data?.data?.user ?navigate.push('/admin/dashboard'):null
+        console.log(response);
+      }).catch((err) => {
+
+      })
+  }
 
   const onSubmit = async (data) => {
-  setloading(true)
+    setloading(true)
     instance.defaults.withCredentials = true
     await instance.post(`/auth/local`,
       {
@@ -51,10 +51,10 @@ const SsoLogin =()=>{
 
         withCredentials: true,
         credentials: 'include',
-        cache: "no-cache", 
+        cache: "no-cache",
         mode: "cors",
         credentials: "same-origin",
-        
+
       }
 
     ).then(async (res) => {
@@ -82,16 +82,16 @@ const SsoLogin =()=>{
   });
 
   useEffect(() => {
-    
+
     //   window.location.href = "/admin/dashboard"
     instance.get(`/hilton_user/detail/me`)
-    .then((response)=>{
-      response?.data?.data?.user ?navigate.push('/admin/dashboard'):null
-    }).catch((err)=>{
-      
-    })
-    
-    
+      .then((response) => {
+        response?.data?.data?.user ? navigate.push('/admin/dashboard') : null
+      }).catch((err) => {
+
+      })
+
+
   }, [])
 
 
@@ -152,15 +152,16 @@ const SsoLogin =()=>{
                         Login
 
                       </Button>
-                      <Button onClick={()=>SsoLogin()} disabled={loading} className="btn-lg w-100" type="submit" variant="warning">
-                        Login With SSO
 
-                      </Button>
                     </Card.Body>
                   </Card.Body>
 
                 </Card>
               </Form>
+              <Button onClick={() => SsoLogin()} disabled={loading} className="btn-lg w-100" type="submit" variant="warning">
+                Login With SSO
+
+              </Button>
             </Col>
           </Container>
         </div>
