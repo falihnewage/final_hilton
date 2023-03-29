@@ -158,10 +158,10 @@ const LoginPage = () => {
 
                 </Card>
               </Form>
-              <Button onClick={() => SsoLogin()} disabled={loading} className="btn-lg w-100" type="submit" variant="warning">
+              {/* <Button onClick={() => SsoLogin()} disabled={loading} className="btn-lg w-100" type="submit" variant="warning">
                 Login With SSO
 
-              </Button>
+              </Button> */}
             </Col>
           </Container>
         </div>
