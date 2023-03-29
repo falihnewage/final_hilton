@@ -278,8 +278,9 @@ const Property=()=> {
             </Row>
             {/* <Card>
               <Card.Body className="p-0"> */}
-
-            <div className="overflow-auto">
+              <Card>
+              <Card.Body className="p-0">
+              <div className="overflow-auto">
               <Table
                 pagination={{
                   pageSize: 10,
@@ -297,8 +298,34 @@ const Property=()=> {
                 dataSource={data}
                 onChange={onChange}
 
+
               />
             </div>
+
+              </Card.Body>
+            </Card>
+
+            {/* <div className="overflow-auto">
+              <Table
+                pagination={{
+                  pageSize: 10,
+                  current:id == ':id' ? 1 : parseInt(id),
+                  defaultCurrent: id == ':id' ? 1 : parseInt(id),
+                  total: numberOfPages,
+                  onChange: (pagenum,) => {
+                    setpage(pagenum - 1)
+                    
+                    history.push(`/admin/Property/${pagenum}`)
+                    // getdata(pagenum-1)
+                  }
+                }} size="small" loading={Loading}
+                columns={columns}
+                dataSource={data}
+                onChange={onChange}
+
+
+              />
+            </div> */}
 
           </Col>
         </Row>
