@@ -24,7 +24,7 @@ const LoginPage = () => {
   const { register, handleSubmit, formState: { errors }, reset } = useForm()
 
   const SsoLogin = () => {
-    axios.get(`https://hiltondevapi.newagesme.com/auth/saml/login`)
+    axios.get(`https://fsdpe-backend.app-t.hhc.hilton.com/auth/saml/login`)
       .then((response) => {
         // response?.data?.data?.user ?navigate.push('/admin/dashboard'):null
         console.log(response);
