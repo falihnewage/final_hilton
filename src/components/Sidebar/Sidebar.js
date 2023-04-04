@@ -90,7 +90,7 @@ function Sidebar({ routes, image, background }) {
             >
               {console.log(prop)}
 
-              {prop.icon()}
+              {prop.icon}
               <p>
                 {prop.name} <b className="caret"></b>
               </p>
@@ -116,7 +116,7 @@ function Sidebar({ routes, image, background }) {
                 {/* <FiAlignJustify/>  */}
                 {console.log(prop)}
 
-              {prop.icon()}
+              {prop.icon}
                 <p>{prop.name}</p>
               </>
             ) : (
