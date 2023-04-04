@@ -10,7 +10,7 @@ import AddProperty from "views/AddProperty";
 import Editpage from "views/Pages/Edit-page";
 import LoginPage from "views/Pages/LoginPage.js";
 import PageNotFound from "views/Pages/Pagenotfound";
-const FiAlignJustify=()=>{
+const FiAlignJustifys=()=>{
   return <FiAlignJustify/>
 }
 var routes = [
@@ -18,7 +18,7 @@ var routes = [
     path: "/dashboard",
     layout: "/admin",
     name: "Dashboard",
-    icon: FiAlignJustify()
+    icon: FiAlignJustifys()
     // <FiAlignJustify/>
     ,
     component: Dashboard,
