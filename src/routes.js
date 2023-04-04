@@ -28,7 +28,7 @@ var routes = [
     path: `/edit-property/:id/:type`,
     layout: "/admin",
     name: "EditProperty",
-    icon: FiAlignJustify,
+    icon: FiAlignJustifys(),
     component: Editpage,
     show:false
   },
@@ -36,7 +36,7 @@ var routes = [
     path: "/Users",
     layout: "/admin",
     name: "User Management",
-    icon: FiAlignJustify,
+    icon: FiAlignJustifys(),
     component: Users,
     show:true
   },
@@ -45,7 +45,7 @@ var routes = [
     path: `/Property/:id`,
     layout: "/admin",
     name: "Property Management",
-    icon: FiAlignJustify,
+    icon: FiAlignJustifys(),
     component: Property,
     show:true
   },
@@ -54,7 +54,7 @@ var routes = [
     path: "/Question",
     layout: "/admin",
     name: "Question Management",
-    icon: FiAlignJustify,
+    icon: FiAlignJustifys(),
     component: Question,
     show:true
   },
@@ -63,7 +63,7 @@ var routes = [
     path: "/Recommendations",
     layout: "/admin",
     name: "Report Management",
-    icon: FiAlignJustify,
+    icon: FiAlignJustifys(),
     component: Recommendations,
     show:true
   },

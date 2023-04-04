@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
-import { FiAlignJustify } from "react-icons/fi";
+
 // react-bootstrap components
 import {
   Badge,
@@ -90,7 +90,7 @@ function Sidebar({ routes, image, background }) {
             >
               {console.log(prop)}
 
-              <prop.icon/>
+              {prop.icon()}
               <p>
                 {prop.name} <b className="caret"></b>
               </p>
