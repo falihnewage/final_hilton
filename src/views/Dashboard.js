@@ -6,6 +6,7 @@ import moment from "moment";
 import { DateRangePicker } from "rsuite";
 import "rsuite/dist/rsuite.min.css";
 import axios from '../Axios';
+import { FiAlignJustify,FiBriefcase,FiHome,FiUsers } from "react-icons/fi";
 
 const { RangePicker } = DatePicker;
 import Chart from 'react-apexcharts'
@@ -165,7 +166,7 @@ const Dashboard=()=> {
                 <Row className="align-items-center">
                   <Col xs="5">
                     <div className="icon-big text-left icon-warning">
-                      <i className="nc-icon nc-circle-09 text-primary"></i>
+                      <i className=" text-primary"> <FiUsers/></i>
                     </div>
                   </Col>
                   <Col xs="7">
@@ -184,7 +185,7 @@ const Dashboard=()=> {
                 <Row className="align-items-center">
                   <Col xs="5">
                     <div className="icon-big text-left icon-warning">
-                      <i className="nc-icon nc-map-big text-danger"></i>
+                      <i className=" text-danger"> <FiHome/></i>
                     </div>
                   </Col>
                   <Col xs="7">
