@@ -5,6 +5,7 @@ import Question from "views/Question.js";
 import Recommendations from "views/Recommendations.js";
 import Users from "views/Users.js";
 import { FiAlignJustify,FiBriefcase,FiHome,FiUsers } from "react-icons/fi";
+import { MdQuestionMark } from "react-icons/md";
 import AddProperty from "views/AddProperty";
 // import AddQuestion from "views/Components/AddQuestion";
 import Editpage from "views/Pages/Edit-page";
@@ -54,7 +55,7 @@ var routes = [
     path: "/Question",
     layout: "/admin",
     name: "Question Management",
-    icon: <FiAlignJustify/>,
+    icon: <MdQuestionMark/>,
     component: Question,
     show:true
   },
