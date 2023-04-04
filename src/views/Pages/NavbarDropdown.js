@@ -2,7 +2,7 @@ import { message, Popconfirm } from 'antd';
 import axios from "../../Axios";
 import React from 'react';
 import { useHistory } from 'react-router';
-import { FaArtstation } from "react-icons/fa";
+import { FiLogOut } from "react-icons/fi";
 
 
 
@@ -47,7 +47,7 @@ const confirm = (e) => {
         placement='bottomRight'
     >
         <a className='text-danger d-flex align-items-center'>
-            <i onClick={(e) => handleLogOut(e)} className=" mr-2"><FaArtstation/></i>
+            <i onClick={(e) => handleLogOut(e)} className=" mr-2"><FiLogOut/></i>
             
             Log out</a>
     </Popconfirm>
