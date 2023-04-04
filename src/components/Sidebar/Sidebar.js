@@ -67,7 +67,7 @@ function Sidebar({ routes, image, background }) {
       if (!prop.show) {
         return null;
       }
-      if (prop.name==="UserDetail") {
+      if (prop.name === "UserDetail") {
         return null;
       }
       if (prop.collapse) {
@@ -112,11 +112,11 @@ function Sidebar({ routes, image, background }) {
           <Nav.Link to={prop.layout + prop.path} as={Link}>
             {prop.icon ? (
               <>
-               {/* <i className={prop.icon}></i> */}
+                {/* <i className={prop.icon}></i> */}
                 {/* <FiAlignJustify/>  */}
                 {console.log(prop)}
+                {React.cloneElement(prop.icon, { key: key })}
 
-              {prop.icon}
                 <p>{prop.name}</p>
               </>
             ) : (
@@ -150,9 +150,9 @@ function Sidebar({ routes, image, background }) {
                 />
               </div>
             </a>
-           
+
           </div>
-          
+
           <Nav as="ul" className="pt-4">{createLinks(routes)}</Nav>
         </div>
         <div
