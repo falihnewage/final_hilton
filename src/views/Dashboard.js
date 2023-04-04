@@ -7,6 +7,7 @@ import { DateRangePicker } from "rsuite";
 import "rsuite/dist/rsuite.min.css";
 import axios from '../Axios';
 import { FiAlignJustify,FiBriefcase,FiHome,FiUsers } from "react-icons/fi";
+import { MdQuestionMark } from "react-icons/md";
 
 const { RangePicker } = DatePicker;
 import Chart from 'react-apexcharts'
@@ -204,7 +205,7 @@ const Dashboard=()=> {
                 <Row className="align-items-center">
                   <Col xs="5">
                     <div className="icon-big text-left icon-warning">
-                      <i className="nc-icon nc-bullet-list-67 text-warning"></i>
+                      <i className=" text-warning"> <MdQuestionMark/></i>
                     </div>
                   </Col>
                   <Col xs="7">
@@ -224,7 +225,7 @@ const Dashboard=()=> {
                 <Row className="align-items-center">
                   <Col xs="5">
                     <div className="icon-big text-left icon-warning">
-                      <i className="nc-icon nc-chart-bar-32 text-success"></i>
+                      <i className=" text-success"> <FiBriefcase/></i>
                     </div>
                   </Col>
                   <Col xs="7">
