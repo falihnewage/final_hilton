@@ -47,8 +47,8 @@ const confirm = (e) => {
         placement='bottomRight'
     >
         <a className='text-danger d-flex align-items-center'>
-            <i onClick={(e) => handleLogOut(e)} className="nc-icon nc-button-power mr-2"></i>
-            <FaArtstation/>
+            <i onClick={(e) => handleLogOut(e)} className=" mr-2"><FaArtstation/></i>
+            
             Log out</a>
     </Popconfirm>
 );
