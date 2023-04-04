@@ -88,7 +88,8 @@ function Sidebar({ routes, image, background }) {
               }}
               aria-expanded={state[prop.state]}
             >
-              <i className={prop.icon}></i>
+              <i ><prop.icon/></i>
+              <prop.icon/>
               <p>
                 {prop.name} <b className="caret"></b>
               </p>
