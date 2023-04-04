@@ -16,10 +16,9 @@ const AddProperty=()=> {
  
   const { id } = useParams();
   const onSubmit = async (data) => {
-    console.log(data?.name.charAt(0).toUpperCase() + data?.name.slice(1) ,'name');
     data.type == "Limited Service" || "Complete Service" ?
       await axios.post(`/property`, {
-        "name": data?.name,
+        "name": data?.name.charAt(0).toUpperCase() + data?.name.slice(1),
         "number": data?.number,
         // "user_id": user_id,
         "general_manager": data.gm,
