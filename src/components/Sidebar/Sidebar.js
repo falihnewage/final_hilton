@@ -110,7 +110,8 @@ function Sidebar({ routes, image, background }) {
           <Nav.Link to={prop.layout + prop.path} as={Link}>
             {prop.icon ? (
               <>
-                <FiAlignJustify/> 
+               <i className={prop.icon}></i>
+                {/* <FiAlignJustify/>  */}
                 <p>{prop.name}</p>
               </>
             ) : (

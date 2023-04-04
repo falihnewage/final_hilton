@@ -16,7 +16,9 @@ var routes = [
     path: "/dashboard",
     layout: "/admin",
     name: "Dashboard",
-    icon: <FiAlignJustify/>,
+    icon: "nc-icon nc-chart-pie-35"
+    // <FiAlignJustify/>
+    ,
     component: Dashboard,
     show:true
   },
