@@ -4,7 +4,7 @@ import Property from "views/Property.js";
 import Question from "views/Question.js";
 import Recommendations from "views/Recommendations.js";
 import Users from "views/Users.js";
-
+import { FiAlignJustify } from "react-icons/fi";
 import AddProperty from "views/AddProperty";
 // import AddQuestion from "views/Components/AddQuestion";
 import Editpage from "views/Pages/Edit-page";
@@ -16,7 +16,7 @@ var routes = [
     path: "/dashboard",
     layout: "/admin",
     name: "Dashboard",
-    icon: "nc-icon nc-chart-pie-35",
+    icon: <FiAlignJustify/>,
     component: Dashboard,
     show:true
   },

@@ -110,7 +110,7 @@ function Sidebar({ routes, image, background }) {
           <Nav.Link to={prop.layout + prop.path} as={Link}>
             {prop.icon ? (
               <>
-                <i className={prop.icon} />
+                {prop.icon} 
                 <p>{prop.name}</p>
               </>
             ) : (
