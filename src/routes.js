@@ -4,7 +4,7 @@ import Property from "views/Property.js";
 import Question from "views/Question.js";
 import Recommendations from "views/Recommendations.js";
 import Users from "views/Users.js";
-import { FiAlignJustify } from "react-icons/fi";
+import { FiAlignJustify,FiBriefcase,FiHome,FiUsers } from "react-icons/fi";
 import AddProperty from "views/AddProperty";
 // import AddQuestion from "views/Components/AddQuestion";
 import Editpage from "views/Pages/Edit-page";
@@ -36,7 +36,7 @@ var routes = [
     path: "/Users",
     layout: "/admin",
     name: "User Management",
-    icon: <FiAlignJustify/>,
+    icon: <FiUsers/>,
     component: Users,
     show:true
   },
@@ -45,7 +45,7 @@ var routes = [
     path: `/Property/:id`,
     layout: "/admin",
     name: "Property Management",
-    icon: <FiAlignJustify/>,
+    icon: <FiHome/>,
     component: Property,
     show:true
   },
@@ -63,7 +63,7 @@ var routes = [
     path: "/Recommendations",
     layout: "/admin",
     name: "Report Management",
-    icon: <FiAlignJustify/>,
+    icon: <FiBriefcase/>,
     component: Recommendations,
     show:true
   },
