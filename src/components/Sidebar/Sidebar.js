@@ -114,8 +114,8 @@ function Sidebar({ routes, image, background }) {
               <>
                 {/* <i className={prop.icon}></i> */}
                 {/* <FiAlignJustify/>  */}
-                {console.log(prop)}
-                {React.cloneElement(prop.icon, { key: key })}
+                {/* {console.log(prop)} */}
+               <i>{React.cloneElement(prop.icon, { key: key })}</i> 
 
                 <p>{prop.name}</p>
               </>
