@@ -10,13 +10,15 @@ import AddProperty from "views/AddProperty";
 import Editpage from "views/Pages/Edit-page";
 import LoginPage from "views/Pages/LoginPage.js";
 import PageNotFound from "views/Pages/Pagenotfound";
-
+const FiAlignJustify=()=>{
+  return <FiAlignJustify/>
+}
 var routes = [
   {
     path: "/dashboard",
     layout: "/admin",
     name: "Dashboard",
-    icon: FiAlignJustify
+    icon: FiAlignJustify()
     // <FiAlignJustify/>
     ,
     component: Dashboard,

@@ -88,7 +88,7 @@ function Sidebar({ routes, image, background }) {
               }}
               aria-expanded={state[prop.state]}
             >
-              <i ><FiAlignJustify/></i>
+              {console.log(props)}
 
               <prop.icon/>
               <p>
