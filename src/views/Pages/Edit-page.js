@@ -65,7 +65,7 @@ const Editpage = () => {
     
     await axios.put(`/property/${id}`, {
       "active": true,
-      "name": data.name ? data.name : property?.name,
+      "name": data.name ? data?.name.charAt(0).toUpperCase() + data?.name.slice(1) : property?.name,
       "number": data.number ? data.number : property?.number,
       // "user_id": user_id,
       "general_manager": data.gm,
