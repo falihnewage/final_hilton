@@ -24,7 +24,7 @@ const LoginPage = () => {
   const { register, handleSubmit, formState: { errors }, reset } = useForm()
 
   const SsoLogin = () => {
-    window.open('https://hiltondevapi.newagesme.com/auth/saml/login')
+    window.location='https://hiltondevapi.newagesme.com/auth/saml/login'
     
   }
 
