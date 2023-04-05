@@ -20,12 +20,13 @@ const handleLogOut = async (e) => {
         ).then(async (response) => {
 
             if (response.status === 200) {
-                message.success('Logout Success')
-                navigate.push(`/auth/login-page`)
+                // message.success('Logout Success')
+                window.location=process.env.REACT_APP_LOGOUT_REDIRECT_URL
+                // navigate.push(`/auth/login-page`)
 
             }
         }).catch((err) => {
-
+            message.warn('Something went wrong')
         })
 
 
