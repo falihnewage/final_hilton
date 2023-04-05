@@ -24,13 +24,8 @@ const LoginPage = () => {
   const { register, handleSubmit, formState: { errors }, reset } = useForm()
 
   const SsoLogin = () => {
-    instance.get(`/auth/saml/login`)
-      .then((response) => {
-        // response?.data?.data?.user ?navigate.push('/admin/dashboard'):null
-        console.log(response);
-      }).catch((err) => {
-
-      })
+    navigate.push('https://hiltondevapi.newagesme.com/auth/saml/login')
+    
   }
 
   const onSubmit = async (data) => {
