@@ -24,7 +24,7 @@ const LoginPage = () => {
   const { register, handleSubmit, formState: { errors }, reset } = useForm()
 
   const SsoLogin = () => {
-    window.location='https://fsdpe-backend.app-t.hhc.hilton.com/auth/saml/login'
+    window.location=process.env.REACT_APP_REDIRECT_URL
     
   }
 
