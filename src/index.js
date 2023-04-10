@@ -14,9 +14,10 @@ import { store } from './Redux/Store';
 
 import AuthLayout from "layouts/Auth.js";
 import AdminLayout from "layouts/Admin.js";
+import Default from "layouts/Default";
 
 
-const token=true
+const token = true
 
 
 
@@ -26,25 +27,29 @@ const token=true
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   // <React.StrictMode>
-    <BrowserRouter>
+  <BrowserRouter>
 
     <Provider store={store} >
-       <Switch>
+      <Default >
+        <Switch>
 
 
 
 
-        <Route path="/admin" render={(props) => <AdminLayout {...props} />} /> 
-        <Route path="/auth" render={(props) => <AuthLayout {...props} />} />
+          <Route path="/admin" render={(props) => <AdminLayout {...props} />} />
+          <Route path="/auth" render={(props) => <AuthLayout {...props} />} />
 
 
-        {token ? <Redirect from="/" to="/admin/dashboard" /> : <Redirect from="/" to="/auth/login-page" />}
+          {token ? <Redirect from="/" to="/admin/dashboard" /> : <Redirect from="/" to="/auth/login-page" />}
 
-      </Switch>
+        </Switch>
 
-     </Provider>
+      </Default>
+
+
+    </Provider>
   </BrowserRouter>,
- {/* </React.StrictMode>  */}
+  {/* </React.StrictMode>  */ }
 );
 
 
