@@ -21,7 +21,7 @@ const Default = ({ children }) => {
     }, [window?.location?.href])
     return (
         <div>
-            {isLoading ? <div className='d-flex justify-content-center align-items-center'><Spin/> </div> : children}
+            {isLoading ? <div className='d-flex justify-content-center align-items-center vh-100'><Spin tip="Loading"  size="large"/> </div> : children}
 
         </div>
     )
