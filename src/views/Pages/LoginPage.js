@@ -76,18 +76,18 @@ const LoginPage = () => {
     }, 1000);
   });
 
-  useEffect(() => {
+  // useEffect(() => {
 
-    //   window.location.href = "/admin/dashboard"
-    instance.get(`/hilton_user/detail/me`)
-      .then((response) => {
-        response?.data?.data?.user ? navigate.push('/admin/dashboard') : null
-      }).catch((err) => {
+  //   //   window.location.href = "/admin/dashboard"
+  //   instance.get(`/hilton_user/detail/me`)
+  //     .then((response) => {
+  //       response?.data?.data?.user ? navigate.push('/admin/dashboard') : null
+  //     }).catch((err) => {
 
-      })
+  //     })
 
 
-  }, [])
+  // }, [])
 
 
   return (

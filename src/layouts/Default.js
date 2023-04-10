@@ -12,6 +12,7 @@ const Default = ({ children }) => {
         instance.get(`/hilton_user/detail/me`)
             .then((response) => {
                 setisLoading(false)
+                response?.data?.data?.user ?.role_id ===1 ? navigate.push('/admin/dashboard') : navigate.push('/auth/login-page')
             }).catch((errr) => {
                 setisLoading(false)
                 navigate.push('/auth/login-page')
