@@ -191,7 +191,7 @@ const Dashboard=()=> {
                   </Col>
                   <Col xs="7">
                     <div className="numbers">
-                      <Link to='/admin/Property'><Card.Title as="h4">Property Management</Card.Title></Link>
+                      <Link to='/admin/Property/:id'><Card.Title as="h4">Property Management</Card.Title></Link>
                     </div>
                   </Col>
                 </Row>
