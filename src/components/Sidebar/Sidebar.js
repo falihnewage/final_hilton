@@ -112,9 +112,7 @@ function Sidebar({ routes, image, background }) {
           <Nav.Link to={prop.layout + prop.path} as={Link}>
             {prop.icon ? (
               <>
-                {/* <i className={prop.icon}></i> */}
-                {/* <FiAlignJustify/>  */}
-                {/* {console.log(prop)} */}
+                
                <i className="text-primary">{React.cloneElement(prop.icon, { key: key })}</i> 
 
                 <p>{prop.name}</p>

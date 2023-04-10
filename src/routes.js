@@ -19,9 +19,7 @@ var routes = [
     path: "/dashboard",
     layout: "/admin",
     name: "Dashboard",
-    icon: <FiAlignJustify/>
-    // <FiAlignJustify/>
-    ,
+    icon: <FiAlignJustify/>,
     component: Dashboard,
     show:true
   },
