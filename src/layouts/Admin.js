@@ -55,23 +55,11 @@ function Admin() {
     });
   };
 
-  useEffect(() => {
-    // console.log(window.location.href,'path');
-    
-    instance.get(`/hilton_user/detail/me`)
-    .then((response)=>{
-      setisLoading(false)
-      // console.log(response?.data?.data?.user);
-      // !response?.data?.data?.user ?navigate.push('/auth/login-page'):null
-    }).catch((errr)=>{
-      setisLoading(false)
-      navigate.push('/auth/login-page')
-    })
-  }, [window?.location?.href])
+  
   
   return (
     <>
-    {isLoading ? <><div className="wrapper">
+     <><div className="wrapper">
         <Sidebar
           routes={routes}
           image={sidebarImage}
@@ -105,7 +93,7 @@ function Admin() {
         ]}
         backgroundColor={sidebarBackground}
         setSidebarBackgroundParent={(value) => setSidebarBackground(value)}
-      /> </>  : <h1>Loading</h1>}
+      /> </>  
       
     </>
   );
