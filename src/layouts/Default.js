@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import instance from 'Axios'
 import { useHistory } from 'react-router'
+import { Spin } from 'antd';
 const Default = ({ children }) => {
 
     const [isLoading, setisLoading] = useState(false)
@@ -20,7 +21,7 @@ const Default = ({ children }) => {
     }, [window?.location?.href])
     return (
         <div>
-            {isLoading ? <h1>Loading</h1> : children}
+            {isLoading ? <div className='d-flex justify-content-center align-items-center'><Spin/> </div> : children}
 
         </div>
     )
