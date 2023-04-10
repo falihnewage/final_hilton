@@ -5,10 +5,10 @@ import instance from 'Axios'
 import { useHistory } from 'react-router'
 const Default = ({ children }) => {
 
-    const [isLoading, setisLoading] = useState(true)
+    const [isLoading, setisLoading] = useState(false)
     const navigate = useHistory()
     useEffect(() => {
-
+        setisLoading(true)
         instance.get(`/hilton_user/detail/me`)
             .then((response) => {
                 setisLoading(false)
