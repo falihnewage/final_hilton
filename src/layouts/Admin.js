@@ -34,6 +34,7 @@ function Admin() {
   const [sidebarImage, setSidebarImage] = React.useState(image3);
   const [sidebarBackground, setSidebarBackground] = React.useState("black");
   const navigate = useHistory()
+  const [isLoading, setisLoading] = useState(true)
   const url = window.location.pathname.split('/').pop();
   const getRoutes = (routes) => {
     return routes.map((prop, key) => {
@@ -56,18 +57,21 @@ function Admin() {
 
   useEffect(() => {
     // console.log(window.location.href,'path');
+    
     instance.get(`/hilton_user/detail/me`)
     .then((response)=>{
+      setisLoading(false)
       // console.log(response?.data?.data?.user);
       // !response?.data?.data?.user ?navigate.push('/auth/login-page'):null
     }).catch((errr)=>{
+      setisLoading(false)
       navigate.push('/auth/login-page')
     })
   }, [window?.location?.href])
   
   return (
     <>
-      <div className="wrapper">
+    {isLoading ? <><div className="wrapper">
         <Sidebar
           routes={routes}
           image={sidebarImage}
@@ -101,7 +105,8 @@ function Admin() {
         ]}
         backgroundColor={sidebarBackground}
         setSidebarBackgroundParent={(value) => setSidebarBackground(value)}
-      />
+      /> </>  : <h1>Loading</h1>}
+      
     </>
   );
 }
