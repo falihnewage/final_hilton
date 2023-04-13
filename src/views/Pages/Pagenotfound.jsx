@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 import { Button, Result } from 'antd';
 const PageNotFound = () => {
   return (
