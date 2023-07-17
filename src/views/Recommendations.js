@@ -26,6 +26,7 @@ const Reports=()=> {
     r_director: false,
     g_manager: false,
     a_manager: false,
+    created_by: false,
   })
 // fuction for assingning url in the <a> tag
   const openWindow =(url)=>{
@@ -136,9 +137,9 @@ const Reports=()=> {
         return {
           onClick: () => {
 
-            setsort(`[["property_id.sales_leader",${sortingOrder.a_manager ? `"desc"` : `"asc"`}]]`)
+            setsort(`[["user_id.full_name",${sortingOrder.created_by ? `"desc"` : `"asc"`}]]`)
             setsortingOrder({
-              a_manager: !sortingOrder.a_manager
+              created_by: !sortingOrder.created_by
             })
           }
         };
