@@ -130,6 +130,24 @@ const Reports=()=> {
       responsive: ["sm"]
     },
     {
+      title: 'Created By',
+      dataIndex: 'created_by',
+      onHeaderCell: (column) => {
+        return {
+          onClick: () => {
+
+            setsort(`[["property_id.sales_leader",${sortingOrder.a_manager ? `"desc"` : `"asc"`}]]`)
+            setsortingOrder({
+              a_manager: !sortingOrder.a_manager
+            })
+          }
+        };
+      },
+      sorter: true,
+      // width: '10%',
+      responsive: ["sm"]
+    },
+    {
       title: '',
       key: 'operation',
       // fixed: 'right',
@@ -159,6 +177,7 @@ const navigate= useHistory()
                 _id: i._id,
                 name: i.property_id.name,
                 regional_manager: i.property_id.regional_operator,
+                created_by:i.user_id.full_name,
                 evaluation_date: moment(i.evaluation_date).format("MMM DD YYYY"),
                 general_manger: i.property_id.general_manager,
                 regional_operator: i.regional_operator,
