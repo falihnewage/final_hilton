@@ -47,22 +47,7 @@ const Users=()=> {
 
 
   const columns = [
-    {
-      title: 'Manager Name',
-      dataIndex: 'manager_Name',
-      onHeaderCell: (column) => {
-        return {
-          onClick: () => {
-
-            setsort(`[["manager_name",${sortingOrder.name ? `"desc"` : `"asc"`}]]`)
-            setsortingOrder({
-              name: !sortingOrder.name
-            })
-          }
-        };
-      },
-      sorter: true,
-    },
+    
     {
       title: 'User Name',
       dataIndex: 'name',
@@ -106,6 +91,22 @@ const Users=()=> {
             setsort(`[["phone",${sortingOrder.phone ? `"desc"` : `"asc"`}]]`)
             setsortingOrder({
               phone: !sortingOrder.phone
+            })
+          }
+        };
+      },
+      sorter: true,
+    },
+    {
+      title: 'Manager Name',
+      dataIndex: 'manager_Name',
+      onHeaderCell: (column) => {
+        return {
+          onClick: () => {
+
+            setsort(`[["manager_name",${sortingOrder.name ? `"desc"` : `"asc"`}]]`)
+            setsortingOrder({
+              name: !sortingOrder.name
             })
           }
         };
