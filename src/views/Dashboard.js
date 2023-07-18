@@ -255,7 +255,8 @@ const Dashboard=()=> {
                     cleanable={false}
                     placeholder="Select Date"
                     defaultValue={[new Date(new Date().getTime() - (7 * 24 * 60 * 60 * 1000)), new Date(new Date().getTime())]}
-                    format='yyyy-MM-dd'
+                    // format='yyyy-MM-dd'
+                    format='MM-dd-yyyy'
                     onChange={(date) => {
 
                       setdateFrom(date[0] && moment(date[0]).format('YYYY-MM-DD'))

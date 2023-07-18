@@ -145,7 +145,7 @@ const Reports=()=> {
         };
       },
       sorter: true,
-      // width: '10%',
+      // width: '10%',  
       responsive: ["sm"]
     },
     {
